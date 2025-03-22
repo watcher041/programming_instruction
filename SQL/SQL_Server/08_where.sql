@@ -8,6 +8,32 @@ SELECT
     COLUMN1
 FROM
 ( 
-	VALUES (1),(2),(3),(4),(5)
+	VALUES (1),(2),(3),(4),(5),(123)
 ) AS VALUES_T(COLUMN1)
 WHERE COLUMN1 = 2
+
+-- どれかひとつに一致するか見るときはORあるいはINを用いる
+SELECT 
+    COLUMN1
+FROM
+( 
+	VALUES (1),(2),(3),(4),(5),(123)
+) AS VALUES_T(COLUMN1)
+WHERE COLUMN1 = 2 OR COLUMN1 = 3
+
+SELECT 
+    COLUMN1
+FROM
+( 
+	VALUES (1),(2),(3),(4),(5),(123)
+) AS VALUES_T(COLUMN1)
+WHERE COLUMN1 IN(2,3)
+
+-- 2を含む数字を表示する場合
+SELECT 
+    COLUMN1
+FROM
+( 
+	VALUES (1),(2),(3),(4),(5),(123)
+) AS VALUES_T(COLUMN1)
+WHERE COLUMN1 LIKE '%2%'
