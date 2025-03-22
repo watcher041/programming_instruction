@@ -1,15 +1,22 @@
 
--- 第5回 VALUES文
+-- 第9回 CROSS APPLY文
 
--- SELECT文を用いずにテーブルを作る文
+-- テーブルにSQLの実行結果をそのまま結合する文
 
--- UNION文で書いていたSQLは以下の通りに書くことができる
+-- 全ての行に2が結合される。
 SELECT 
-    COLUMN3
+    VALUES_T.COLUMN1 AS VALUES__T_VALUE,
+	CROSS_T.COLUMN1  AS CROSS__T_VALUE
 FROM
 ( 
 	VALUES (1),(2)
-) AS VALUES_T(COLUMN3)
+) AS VALUES_T(COLUMN1)
+CROSS APPLY
+(
+	SELECT 2 AS COLUMN1
+) AS CROSS_T
+
+-- 指定の条件で結合する場合は、
 
 -- 結合後のテーブルも見やすくなる
 SELECT 
