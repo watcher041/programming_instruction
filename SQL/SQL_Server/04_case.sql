@@ -10,8 +10,7 @@ SELECT
         WHEN COLUMN1 = 0 THEN '馬'
         WHEN COLUMN1 = 1 THEN '鹿'
         ELSE '無'
-    END) AS CASE_RESULT,
-    COLUMN2
+    END) AS CASE_RESULT
 FROM
 (
     SELECT 
