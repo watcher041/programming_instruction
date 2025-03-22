@@ -13,7 +13,7 @@ FROM
 (
     SELECT 
         1 AS COLUMN1,
-        2 AS COLUMN2
+        'test' AS COLUMN2
 ) AS SUB_QUERY_T
 
 -- 「実際のテーブル（REAL_T）」から値を表示する場合

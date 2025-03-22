@@ -6,4 +6,4 @@
 
 SELECT 
     1 AS COLUMN1,
-    2 AS COLUMN2
+    'test' AS COLUMN2
